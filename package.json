@@ -6,7 +6,6 @@
   "repository": "https://github.com/jwarby/gitbook-plugin-recently-updated",
   "author": "James Warwood <warwood.aj@gmail.com>",
   "license": "MIT",
-  "private": true,
   "engines": {
     "gitbook": ">1.x.x"
   },
