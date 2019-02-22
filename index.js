@@ -12,13 +12,15 @@ module.exports = {
         const articles = []
 
         this.summary.walk(article => {
-          stack[article.depth - 1] = article.title
+          if (article.path) {
+            stack[article.depth - 1] = article.title
 
-          articles.push({
-            fullTitle: stack.slice(0, article.depth).join(' > '),
-            mtime: fs.statSync(path.join(process.cwd(), article.path)).mtime,
-            url: encodeURI(article.path.replace(/\.md$/, '.html'))
-          })
+            articles.push({
+              fullTitle: stack.slice(0, article.depth).join(' > '),
+              mtime: fs.statSync(path.join(process.cwd(), article.path)).mtime,
+              url: encodeURI(article.path.replace(/\.md$/, '.html'))
+            })
+          }
         })
 
         const recent = articles.sort((a, b) => b.mtime - a.mtime)
