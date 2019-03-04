@@ -17,7 +17,7 @@ module.exports = {
 
             articles.push({
               fullTitle: stack.slice(0, article.depth).join(' > '),
-              mtime: fs.statSync(path.join(process.cwd(), article.path)).mtime,
+              mtime: fs.statSync(this.resolve(article.path)).mtime,
               url: encodeURI(article.path.replace(/\.md$/, '.html'))
             })
           }
