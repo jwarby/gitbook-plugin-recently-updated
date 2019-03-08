@@ -1,3 +1,7 @@
+# v1.0.3 - 8th Mar 2019
+
+- Fixed build failing if `root` property in `book.json` set to subdirectory - `44e8d770` - thanks @monyxie
+
 # v1.0.2 - 22nd Feb 2019
 
 - Fixed plugin crashing if external links were used in `SUMMARY.md` - `e2599e4f` - thanks @drikin
