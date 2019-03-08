@@ -1,5 +1,4 @@
 const fs = require('fs')
-const path = require('path')
 
 const groupBy = require('lodash.groupby')
 const map = require('lodash.map')
