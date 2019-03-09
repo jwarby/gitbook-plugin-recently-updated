@@ -17,7 +17,12 @@ module.exports = {
             articles.push({
               fullTitle: stack.slice(0, article.depth).join(' > '),
               mtime: fs.statSync(this.resolve(article.path)).mtime,
-              url: encodeURI(article.path.replace(/\.md$/, '.html'))
+              url: encodeURI(article.path.replace(/(.*)\/(.*)\.md$/, (match, p1, p2) => {
+                if (p2 === "README") {
+                  p2 = "index"
+                }
+                return p1 + '/' + p2 + '.html'
+              }))
             })
           }
         })
